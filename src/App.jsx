@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import backgroundImage from "../public/images/bg-image.jpg";
+import profileImage from "../public/images/profile.jpeg";
 
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("home");
@@ -6,7 +8,7 @@ export default function ProfilePage() {
   return (
     <div
       className="min-h-screen bg-cover bg-center flex flex-col items-center p-6"
-      style={{ backgroundImage: "url('/bg-image.jpg')" }}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="bg-white bg-opacity-80 shadow-lg rounded-lg p-6 max-w-3xl w-full text-center">
         <div className="flex flex-wrap justify-center space-x-4 mb-6">
@@ -40,7 +42,7 @@ export default function ProfilePage() {
           {activeTab === "home" && (
             <div>
               <img
-                src="/profile.jpeg"
+                src={profileImage}
                 alt="Profil Foto"
                 className="rounded-full mx-auto mb-4 w-32 h-32 border-4 border-blue-500"
               />
